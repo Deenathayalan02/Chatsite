@@ -1,7 +1,11 @@
 <html>
 
 <head>
+    <title>Chat app</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta proprty="og:title" content="Chat">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -175,24 +179,24 @@
 
 
 <script>
-        function send() {
-            var message = $("#Txtbox").val();
+    function send() {
+        var message = $("#Txtbox").val();
 
-            if (message.trim() === "") return;  // Prevent sending empty messages
+        if (message.trim() === "") return;  // Prevent sending empty messages
 
-            // Get the current time in HH:MM format
-            var currentTime = new Date();
-            var hours = currentTime.getHours();
-            var minutes = currentTime.getMinutes();
-            if (minutes < 10) minutes = '0' + minutes;  // Ensure two digits for minutes
-            var time = hours + ":" + minutes;
+        // Get the current time in HH:MM format
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        if (minutes < 10) minutes = '0' + minutes;  // Ensure two digits for minutes
+        var time = hours + ":" + minutes;
 
-            var newmsg = `<div class="container darker">
+        var newmsg = `<div class="container darker">
                         <p>${message}</p>
                         <span class="time-left">${time}</span>
                     </div>`;
 
-            $('.main').append(newmsg);
-            $('#Txtbox').val('');  // Clear the input field
-        }
+        $('.main').append(newmsg);
+        $('#Txtbox').val('');  // Clear the input field
+    }
 </script>
